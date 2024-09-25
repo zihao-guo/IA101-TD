@@ -20,4 +20,4 @@ data = lecture_csv("data/dorade.csv")
 y_true = [float(d["poids"]) for d in data] # Labels réels
 y_pred = [vote_majoritaire(y_true, reg=True)] * len(y_true) # Labels prédits
 
-print(eqm(y_true, y_pred))
+print(eqm(y_true, y_pred)) 

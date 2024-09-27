@@ -7,7 +7,7 @@ data = lecture_csv("data/dorade.csv") # Lecture du fichier CSV
 
 y_true = [d["espece"] for d in data] # Labels réels
 y_pred = [vote_majoritaire(y_true)] * len(y_true) # Labels prédits
-print(taux_erreur(y_true, y_pred)*100, "%")
+print("Taux d'erreur: ", taux_erreur(y_true, y_pred)*100, "%")
 
 
 # regression 2-4

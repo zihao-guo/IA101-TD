@@ -230,3 +230,15 @@ def gini(y):
 # y = [0, 1, 0, 0, 1]
 # # Afficher le résultat
 # print("Indice de Gini:", gini(y))
+
+# TD04
+## EX1.7
+def est_complet(x):
+    for c in x.keys():
+        if x[c] == "":
+            return False
+    return True
+# x = {"name": "Alice", "age": "25", "city": "Paris"}
+# print(est_complet(x))
+# x = {"name": "Bob", "age": "", "city": "London"}
+# print(est_complet(x)) 

@@ -151,25 +151,25 @@ def kppv(X, X_train, y_train, k, p=2, reg=False):
         y_pred.append(vote_majoritaire([y_train[idx[j]] for j in range(k)], reg))
     return y_pred
 
-# # Test de la fonction kppv
-# # Training data (X_train) and labels (y_train)
-# X_train = [[1, 2], [2, 3], [3, 4], [6, 7], [7, 8]]
-# y_train = [0, 0, 0, 1, 1]  # 0 and 1 are two classes
-# # Test data (X) for which we want to predict the labels
-# X = [[2, 2], [5, 5]]
-# # Set k (number of neighbors) and p (Euclidean distance, p=2)
-# k = 3
-# p = 2
-# for i, xi in enumerate(X):
-#     print(f"\nProcessing test point {i+1}: {xi}") # Print the current test point
-#     dist = distance(xi, X_train, p) # Compute the distances between the test point and the training points
-#     print(f"Distances to training points: {dist}")
-#     idx = argsort(dist) # Sort the distances and get the indices
-#     print(f"Indices of sorted distances: {idx}")
-#     neighbors = [y_train[idx[j]] for j in range(k)] # Get the labels of the k nearest neighbors
-#     print(f"Labels of nearest neighbors: {neighbors}")
-#     y_pred = vote_majoritaire(neighbors, reg=False) # Predict the label of the test point
-#     print(f"Predicted label: {y_pred}")
+# Test de la fonction kppv
+# Training data (X_train) and labels (y_train)
+X_train = [[1, 2], [2, 3], [3, 4], [6, 7], [7, 8]]
+y_train = [0, 0, 0, 1, 1]  # 0 and 1 are two classes
+# Test data (X) for which we want to predict the labels
+X = [[2, 2], [5, 5]]
+# Set k (number of neighbors) and p (Euclidean distance, p=2)
+k = 3
+p = 2
+for i, xi in enumerate(X):
+    print(f"\nProcessing test point {i+1}: {xi}") # Print the current test point
+    dist = distance(xi, X_train, p) # Compute the distances between the test point and the training points
+    print(f"Distances to training points: {dist}")
+    idx = argsort(dist) # Sort the distances and get the indices
+    print(f"Indices of sorted distances: {idx}")
+    neighbors = [y_train[idx[j]] for j in range(k)] # Get the labels of the k nearest neighbors
+    print(f"Labels of nearest neighbors: {neighbors}")
+    y_pred = vote_majoritaire(neighbors, reg=False) # Predict the label of the test point
+    print(f"Predicted label: {y_pred}")
 
 # ================== ex1.3+4
 # from ia01.utils import lecture_csv

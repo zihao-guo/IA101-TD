@@ -1,65 +1,69 @@
-from ia01.utils import lecture_csv, est_complet
-from ia01.metriques import valeurs_lim
+# from ia01.utils import *
+# from ia01.metriques import *
+# from ia01.evaluation import *
+# from ia01.arbre import *
 
-# Exercice 1.1
-data = lecture_csv("data/dep_48_filtre.csv")
-data_ = []
-for i in range(len(data)):
-    if (data[i]["classe_consommation_energie"] != "N" ) & (data[i]["classe_estimation_ges"] != "N"):
-        data_.append(data[i])
-data = data_ # We keep only the data with known energy consumption and greenhouse gas emission
-# print(len(data))
+print("==== TD 04 ====")
 
-# Exercice 1.2
-data_ = []
-for i in range(len(data)):
-    if int(data[i]["annee_construction"]) > 1:
-        data_.append(data[i])
-data = data_
-# print(len(data))
+champs_descr = [
+    "annee_construction",
+    "surface_habitable",
+    "nombre_niveaux",
+    "surface_baies_orientees_nord",
+    "surface_baies_orientees_est_ouest",
+    "surface_baies_orientees_sud",
+    "surface_planchers_hauts_deperditifs",
+    "surface_planchers_bas_deperditifs",
+    "surface_parois_verticales_opaques_deperditives",
+    "longitude",
+    "latitude",
+    "tr001_modele_dpe_type_libelle",
+    "tr002_type_batiment_libelle",
+]
 
-# Exercice 1.6
-surf_hab = []
-for i in range(len(data)):
-    surf_hab.append(float(data[i]["surface_habitable"]))
-s_min, s_max = valeurs_lim(surf_hab)
-# print(s_min, s_max)
+## Exercice 1.1
+# =============
+print("\n== Exercice 1.1 ==")
 
-data_ = []
-for i in range(len(data)):
-    if (float(data[i]["surface_habitable"]) >= s_min) & (float(data[i]["surface_habitable"]) <= s_max):
-        data_.append(data[i])
-data = data_
-# print(len(data))
 
-# Exercice 1.8
-data_ = []
-for i in range(len(data)):
-    if est_complet(data[i]):
-        data_.append(data[i])
-data = data_
-# print(len(data))
+## Exercice 1.2
+# =============
+print("\n== Exercice 1.2 ==")
 
-# Exercice 1.9
-data_ = []
-for i in range(len(data)):
-    if (
-        float(data[i]["surface_baies_orientees_nord"])
-        + float(data[i]["surface_baies_orientees_est_ouest"])
-        + float(data[i]["surface_baies_orientees_sud"])
-        + float(data[i]["surface_planchers_hauts_deperditifs"])
-        + float(data[i]["surface_planchers_bas_deperditifs"])
-        + float(data[i]["surface_parois_verticales_opaques_deperditives"])
-        > 0
-    ):
-        data_.append(data[i])
-data = data_
-# print(len(data))
+## Exercice 1.6
+# =============
+print("\n== Exercice 1.6 ==")
+
+## Exercice 1.8
+# =============
+print("\n== Exercice 1.8 ==")
+
+## Exercice 1.9
+# =============
+print("\n== Exercice 1.9 ==")
 
 # Exercice 1.10
-data_ = []
-for i in range(len(data)):
-    if float(data[i]["consommation_energie"]) + float(data[i]["estimation_ges"]) > 0:
-        data_.append(data[i])
-data = data_
-print(len(data))
+# =============
+print("\n== Exercice 1.10 ==")
+
+## Exercice 2.1
+# =============
+
+## Exercice 2.2
+# =============
+
+## Exercice 2.3
+# =============
+
+## Exercice 2.4
+# =============
+print("\n== Exercice 2.4 ==")
+
+## Exercice 2.6
+# =============
+print("\n== Exercice 2.6 ==")
+
+## Exercice 2.8
+# =============
+print("\n== Exercice 2.8 ==")
+

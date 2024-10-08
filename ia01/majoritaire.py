@@ -1,7 +1,10 @@
 from ia01.utils import unique, compte, moyenne
 
+## TD01
+# ==============
+
 def vote_majoritaire(y, reg=False):
-    """Applique le vote majoritaire à la liste y.
+    """Applique le vote majoritaire à la y.
 
     Paramètres
     ----------
@@ -18,19 +21,13 @@ def vote_majoritaire(y, reg=False):
         Regression : moyenne empirique des éléments de y
     """
     if reg:
-        # Problème de régression
         return moyenne(y)
     else:
-        # Problème de classification
         label = unique(y)
         nombre = compte(y)
-        i_max, n_max = -1, -1 # Initialisation
-        for i in range(len(label)): # Parcours de tous les labels
-            if nombre[i] > n_max: # Si le nombre d'occurrences est plus grand
-                n_max = nombre[i] # On met à jour le nombre d'occurrences
-                i_max = i # On met à jour l'indice du label majoritaire
+        i_max, n_max = -1, -1
+        for i in range(len(label)):
+            if nombre[i] > n_max:
+                n_max = nombre[i]
+                i_max = i
         return label[i_max]
-    
-# # Exemple pour la classification
-# y_classification = [1, 0, 1, 1, 0]
-# print(vote_majoritaire(y_classification))

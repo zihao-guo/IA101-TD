@@ -197,3 +197,21 @@ def gini(y):
 
 ## TD04
 # ==============
+
+def est_complet(x):
+    """Vérifie que tous les champs de x sont renseignés
+
+    Paramètres
+    ----------
+    x : dict
+        Dictionnaire décrivant une donnée
+
+    Sorties
+    -------
+    True si tous les champs de x sont différents de la chaîne de caractère vide : ""
+    False sinon
+    """
+    for c in x.keys():
+        if x[c] == "":
+            return False
+    return True
